@@ -5,15 +5,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import DestinationCard from "@/components/DestinationCard";
 import CityHotelsModal from "@/components/CityHotelsModal";
 import CountryAutocomplete from "@/components/CountryAutocomplete";
-import { deals, countries, countryToDestination, type Destination } from "@/lib/data";
+import { countries, countryToDestination, type Destination, type Deal } from "@/lib/data";
 
 export default function DestinationsClient({
   locale,
   destinations,
+  deals,
   dict,
 }: {
   locale: string;
   destinations: Destination[];
+  deals: Deal[];
   dict: {
     searchPlaceholder: string;
     all: string;

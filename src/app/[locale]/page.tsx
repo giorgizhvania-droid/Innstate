@@ -7,7 +7,7 @@ import DestinationsGrid from "@/components/DestinationsGrid";
 import DealCard from "@/components/DealCard";
 import Counter from "@/components/Counter";
 import Testimonials from "@/components/Testimonials";
-import { destinations, deals } from "@/lib/data";
+import { getDestinations, getDeals } from "@/lib/content";
 
 const whyIcons = [
   <path key="globe" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0c2.5-2.5 3.5-5.5 3.5-9S14.5 5 12 3M12 21c-2.5-2.5-3.5-5.5-3.5-9S9.5 5 12 3m-9 9h18" />,
@@ -21,6 +21,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   if (!isLocale(rawLocale)) notFound();
   const locale: Locale = rawLocale;
   const dict = await getDictionary(locale);
+  const [destinations, deals] = await Promise.all([getDestinations(), getDeals()]);
 
   const stats = [
     { label: dict.stats.destinations, value: destinations.length * 12, suffix: "+" },
@@ -46,6 +47,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <DestinationsGrid
             locale={locale}
             destinations={destinations}
+            deals={deals}
             dealsLabel={dict.dealsSection.title.split(" ")[0]}
             ctaLabel={dict.dealsSection.request}
           />

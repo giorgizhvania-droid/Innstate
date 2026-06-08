@@ -4,17 +4,19 @@ import { useState } from "react";
 import Reveal from "./Reveal";
 import DestinationCard from "./DestinationCard";
 import CityHotelsModal from "./CityHotelsModal";
-import { deals, type Destination } from "@/lib/data";
+import type { Destination, Deal } from "@/lib/data";
 
 export default function DestinationsGrid({
   locale,
   destinations,
+  deals,
   dealsLabel,
   ctaLabel,
   reveal = true,
 }: {
   locale: string;
   destinations: Destination[];
+  deals: Deal[];
   dealsLabel: string;
   ctaLabel: string;
   reveal?: boolean;

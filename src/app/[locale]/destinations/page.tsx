@@ -1,6 +1,6 @@
 import { getDictionary, isLocale, type Locale } from "@/i18n/config";
 import { notFound } from "next/navigation";
-import { destinations } from "@/lib/data";
+import { getDestinations, getDeals } from "@/lib/content";
 import DestinationsClient from "./DestinationsClient";
 
 export default async function DestinationsPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -8,6 +8,7 @@ export default async function DestinationsPage({ params }: { params: Promise<{ l
   if (!isLocale(rawLocale)) notFound();
   const locale: Locale = rawLocale;
   const dict = await getDictionary(locale);
+  const [destinations, deals] = await Promise.all([getDestinations(), getDeals()]);
 
   return (
     <div className="mx-auto max-w-7xl px-5 pb-24 pt-36 sm:px-8 sm:pt-44">
@@ -19,6 +20,7 @@ export default async function DestinationsPage({ params }: { params: Promise<{ l
       <DestinationsClient
         locale={locale}
         destinations={destinations}
+        deals={deals}
         dict={{
           searchPlaceholder: dict.destinationsPage.searchPlaceholder,
           all: dict.destinationsPage.all,
