@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import SafeImage from "./SafeImage";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
@@ -60,7 +60,7 @@ export default function CityHotelsModal({
             className="relative z-10 flex max-h-[88vh] w-full flex-col overflow-hidden rounded-t-3xl bg-white shadow-2xl sm:max-h-[80vh] sm:max-w-3xl sm:rounded-3xl"
           >
             <div className="relative h-40 shrink-0 overflow-hidden sm:h-48">
-              <Image src={destination.image} alt={destination.name} fill sizes="700px" className="object-cover" />
+              <SafeImage src={destination.image} alt={destination.name} fill sizes="700px" className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/10" />
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-5">
                 <div>
@@ -91,7 +91,7 @@ export default function CityHotelsModal({
                     className="overflow-hidden rounded-2xl bg-surface ring-1 ring-black/5"
                   >
                     <div className="relative h-36 w-full overflow-hidden">
-                      <Image src={hotel.image} alt={hotel.hotelName} fill sizes="350px" className="object-cover transition-transform duration-500 hover:scale-110" />
+                      <SafeImage src={hotel.image} alt={hotel.hotelName} fill sizes="350px" className="object-cover transition-transform duration-500 hover:scale-110" />
                     </div>
                     <div className="p-4">
                       <h3 className="font-display text-sm font-semibold text-foreground">{hotel.hotelName}</h3>

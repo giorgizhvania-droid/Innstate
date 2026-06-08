@@ -4,7 +4,8 @@ import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import DestinationCard from "@/components/DestinationCard";
 import CityHotelsModal from "@/components/CityHotelsModal";
-import { deals, type Destination } from "@/lib/data";
+import CountryAutocomplete from "@/components/CountryAutocomplete";
+import { deals, countries, countryToDestination, type Destination } from "@/lib/data";
 
 export default function DestinationsClient({
   locale,
@@ -13,11 +14,19 @@ export default function DestinationsClient({
 }: {
   locale: string;
   destinations: Destination[];
-  dict: { searchPlaceholder: string; all: string; noResults: string; dealsLabel: string; ctaLabel: string };
+  dict: {
+    searchPlaceholder: string;
+    all: string;
+    noResults: string;
+    dealsLabel: string;
+    ctaLabel: string;
+    noMatchHint: string;
+  };
 }) {
   const [query, setQuery] = useState("");
   const [region, setRegion] = useState<string>("all");
   const [active, setActive] = useState<Destination | null>(null);
+  const [countryNotice, setCountryNotice] = useState<string | null>(null);
 
   const regions = useMemo(() => {
     const set = new Set(destinations.map((d) => d.country));
@@ -32,21 +41,42 @@ export default function DestinationsClient({
 
   const hotels = active ? deals.filter((d) => d.destinationSlug === active.slug) : [];
 
+  function handleCountrySelect(country: string) {
+    setCountryNotice(null);
+    const slug = countryToDestination[country];
+    const destination = slug ? destinations.find((d) => d.slug === slug) : undefined;
+    if (destination) {
+      setActive(destination);
+    } else {
+      setCountryNotice(country);
+    }
+  }
+
   return (
     <div>
-      <div className="mx-auto mt-10 flex max-w-2xl flex-col items-center gap-4 sm:flex-row">
-        <div className="relative w-full">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-foreground/40">
-            <circle cx="11" cy="11" r="7" />
-            <path d="m21 21-4.3-4.3" />
-          </svg>
-          <input
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder={dict.searchPlaceholder}
-            className="w-full rounded-full border border-black/10 bg-white py-3 pl-11 pr-4 text-sm outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
-          />
-        </div>
+      <div className="mx-auto mt-10 max-w-2xl">
+        <CountryAutocomplete
+          countries={countries}
+          placeholder={dict.searchPlaceholder}
+          onQueryChange={(q) => {
+            setQuery(q);
+            setCountryNotice(null);
+          }}
+          onSelect={handleCountrySelect}
+          emptyHint={dict.noResults}
+        />
+        <AnimatePresence>
+          {countryNotice && (
+            <motion.p
+              initial={{ opacity: 0, y: -6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              className="mt-3 rounded-xl bg-accent/10 px-4 py-3 text-center text-sm text-accent"
+            >
+              {countryNotice} — {dict.noMatchHint}
+            </motion.p>
+          )}
+        </AnimatePresence>
       </div>
 
       <div className="mx-auto mt-5 flex max-w-3xl flex-wrap items-center justify-center gap-2">

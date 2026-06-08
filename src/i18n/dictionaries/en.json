@@ -8,7 +8,8 @@
     "destinations": "Destinations",
     "deals": "Deals",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "call": "Call Us"
   },
   "hero": {
     "headline": "Find Better Hotel Deals Worldwide",
@@ -29,18 +30,39 @@
     "title": "Why Innstate",
     "subtitle": "We make finding the right hotel deal simple, fast, and reliable.",
     "items": [
-      { "title": "Global Hotel Coverage", "text": "Access hotel deals across hundreds of destinations worldwide." },
-      { "title": "Best Deal Access", "text": "Exclusive offers curated to give you the most value for your trip." },
-      { "title": "Fast Inquiry System", "text": "Submit your travel inquiry in seconds and hear back quickly." },
-      { "title": "Trusted Partners", "text": "We work with reliable hotel partners across the globe." }
+      {
+        "title": "Global Hotel Coverage",
+        "text": "Access hotel deals across hundreds of destinations worldwide."
+      },
+      {
+        "title": "Best Deal Access",
+        "text": "Exclusive offers curated to give you the most value for your trip."
+      },
+      {
+        "title": "Fast Inquiry System",
+        "text": "Submit your travel inquiry in seconds and hear back quickly."
+      },
+      {
+        "title": "Trusted Partners",
+        "text": "We work with reliable hotel partners across the globe."
+      }
     ]
   },
   "how": {
     "title": "How It Works",
     "steps": [
-      { "title": "Browse hotel deals", "text": "Explore our curated selection of hotel offers worldwide." },
-      { "title": "Send inquiry", "text": "Fill out a short form with your travel details." },
-      { "title": "Receive confirmation", "text": "We'll reach out to confirm your inquiry via email." }
+      {
+        "title": "Browse hotel deals",
+        "text": "Explore our curated selection of hotel offers worldwide."
+      },
+      {
+        "title": "Send inquiry",
+        "text": "Fill out a short form with your travel details."
+      },
+      {
+        "title": "Receive confirmation",
+        "text": "We'll reach out to confirm your inquiry via email."
+      }
     ]
   },
   "stats": {
@@ -53,10 +75,22 @@
     "title": "What Travelers Say",
     "subtitle": "Real feedback from travelers who found their perfect stay through Innstate.",
     "items": [
-      { "name": "Anna K.", "text": "Innstate helped me find an amazing deal in Rome within minutes. The inquiry process was super simple!" },
-      { "name": "David M.", "text": "I loved how easy it was to browse destinations and get a quick response back about my travel dates." },
-      { "name": "Sophie L.", "text": "Great selection of hotels and a smooth, modern experience from start to finish." },
-      { "name": "Levan T.", "text": "Found a fantastic deal in Dubai. The team replied to my inquiry the same day." }
+      {
+        "name": "Anna K.",
+        "text": "Innstate helped me find an amazing deal in Rome within minutes. The inquiry process was super simple!"
+      },
+      {
+        "name": "David M.",
+        "text": "I loved how easy it was to browse destinations and get a quick response back about my travel dates."
+      },
+      {
+        "name": "Sophie L.",
+        "text": "Great selection of hotels and a smooth, modern experience from start to finish."
+      },
+      {
+        "name": "Levan T.",
+        "text": "Found a fantastic deal in Dubai. The team replied to my inquiry the same day."
+      }
     ]
   },
   "cta": {
@@ -74,7 +108,8 @@
     "subtitle": "Search and filter destinations to find your next great hotel deal.",
     "searchPlaceholder": "Search destinations...",
     "all": "All",
-    "noResults": "No destinations match your search."
+    "noResults": "No destinations match your search.",
+    "noMatchHint": "No featured city for this country yet — contact us and we'll find a deal for you."
   },
   "dealsPage": {
     "title": "Hotel Deals",

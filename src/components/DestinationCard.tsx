@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import SafeImage from "./SafeImage";
 import { motion } from "framer-motion";
 import type { Destination } from "@/lib/data";
 
@@ -23,7 +23,7 @@ export default function DestinationCard({
       transition={{ duration: 0.25, ease: "easeOut" }}
       className="group relative block h-72 w-full overflow-hidden rounded-3xl text-left shadow-sm"
     >
-      <Image
+      <SafeImage
         src={destination.image}
         alt={destination.name}
         fill

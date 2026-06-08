@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import SafeImage from "./SafeImage";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { Deal } from "@/lib/data";
@@ -21,7 +21,7 @@ export default function DealCard({
       className="group overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-black/5"
     >
       <div className="relative h-52 overflow-hidden">
-        <Image
+        <SafeImage
           src={deal.image}
           alt={deal.hotelName}
           fill

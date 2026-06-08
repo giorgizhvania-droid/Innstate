@@ -25,6 +25,7 @@ export default async function DestinationsPage({ params }: { params: Promise<{ l
           noResults: dict.destinationsPage.noResults,
           dealsLabel: dict.dealsSection.title.split(" ")[0],
           ctaLabel: dict.dealsSection.request,
+          noMatchHint: dict.destinationsPage.noMatchHint,
         }}
       />
     </div>

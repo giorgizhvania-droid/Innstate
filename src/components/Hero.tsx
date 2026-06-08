@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Link from "next/link";
+import CallButton from "./CallButton";
 import { motion, useScroll, useTransform } from "framer-motion";
 import type { Dictionary, Locale } from "@/i18n/config";
 
@@ -71,6 +72,7 @@ export default function Hero({ locale, dict }: { locale: Locale; dict: Dictionar
           >
             {dict.hero.contact}
           </Link>
+          <CallButton label={dict.nav.call} className="w-full sm:w-auto" />
         </motion.div>
       </motion.div>
     </section>

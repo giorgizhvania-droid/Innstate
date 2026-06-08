@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const RECIPIENT = "innstate01@proton.me";
+const RECIPIENT = "Innstate01@proton.me";
 
 type InquiryPayload = {
   fullName?: string;

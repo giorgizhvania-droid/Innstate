@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Logo from "./Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
 import SocialIcons from "./SocialIcons";
+import CallButton from "./CallButton";
 import type { Dictionary, Locale } from "@/i18n/config";
 
 export default function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
@@ -67,6 +68,7 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <CallButton label={dict.nav.call} />
           <SocialIcons />
           <LanguageSwitcher locale={locale} />
         </div>
@@ -103,6 +105,9 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
                   {item.label}
                 </Link>
               ))}
+              <div className="mt-2 px-3">
+                <CallButton label={dict.nav.call} className="w-full justify-center" />
+              </div>
               <div className="mt-2 flex items-center justify-between px-3">
                 <SocialIcons />
                 <LanguageSwitcher locale={locale} />

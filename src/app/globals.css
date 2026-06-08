@@ -22,6 +22,24 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
+:lang(ka) {
+  font-family: var(--font-georgian), var(--font-sans), Arial, sans-serif;
+  font-weight: 600;
+}
+
+:lang(ka) h1, :lang(ka) h2, :lang(ka) h3, :lang(ka) .font-display {
+  font-family: var(--font-georgian), var(--font-display), sans-serif;
+  font-weight: 700;
+}
+
+:lang(ru) {
+  font-weight: 500;
+}
+
+:lang(ru) h1, :lang(ru) h2, :lang(ru) h3, :lang(ru) .font-display {
+  font-weight: 700;
+}
+
 ::selection {
   background: var(--accent);
   color: white;
