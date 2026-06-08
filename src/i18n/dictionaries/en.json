@@ -149,6 +149,20 @@
     "directTitle": "Reach us directly",
     "directText": "Fill out the form and we typically respond within 24 hours."
   },
+  "assistant": {
+    "title": "Innstate Assistant",
+    "greeting": "Hi! I'm here to help with quick questions about Innstate. Tap a question below or type your own.",
+    "placeholder": "Type your question...",
+    "send": "Send",
+    "fallback": "I'm not totally sure about that — please reach out via our Contact page and our team will help you directly.",
+    "questions": [
+      { "q": "How does Innstate work?", "a": "Innstate is a hotel deals discovery platform. Browse destinations or deals, click a city to see hotel offers, then submit a quick inquiry form — our team gets back to you with the details. We don't handle bookings or payments directly." },
+      { "q": "How can I contact you?", "a": "The fastest way is our Contact page — fill in your details and travel dates and our team will respond, usually within 24 hours. You can also call us directly using the call button in the header." },
+      { "q": "What are your social media pages?", "a": "You can find us on Facebook (facebook.com/Innstate) and Instagram (instagram.com/innstate_ge) — follow us for the latest hotel deals and travel inspiration." },
+      { "q": "Do you handle bookings or payments?", "a": "No — Innstate is a deal discovery and inquiry platform only. We don't process bookings, payments, or reservations. Submit an inquiry and our team will help you move forward directly with the hotel." },
+      { "q": "What languages do you support?", "a": "Innstate is available in English, Georgian (ქართული), and Russian (Русский). Use the language switcher in the header to change languages anytime." }
+    ]
+  },
   "common": {
     "learnMore": "Learn More",
     "viewAll": "View All",

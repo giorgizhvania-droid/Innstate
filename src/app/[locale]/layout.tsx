@@ -4,6 +4,7 @@ import { getDictionary, isLocale, locales, type Locale } from "@/i18n/config";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LoadingScreen from "@/components/LoadingScreen";
+import AssistantWidget from "@/components/AssistantWidget";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -56,6 +57,7 @@ export default async function LocaleLayout({
       <Header locale={locale} dict={dict} />
       <main>{children}</main>
       <Footer locale={locale} dict={dict} />
+      <AssistantWidget dict={dict} />
     </div>
   );
 }
