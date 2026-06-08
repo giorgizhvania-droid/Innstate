@@ -133,8 +133,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="grid grid-cols-2 gap-8 rounded-3xl bg-foreground px-8 py-12 sm:grid-cols-4">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
-              <div className="text-white">
-                <Counter to={s.value} suffix={s.suffix} />
+              <div>
+                <Counter to={s.value} suffix={s.suffix} className="text-white" />
               </div>
               <p className="mt-1.5 text-sm text-white/60">{s.label}</p>
             </div>
