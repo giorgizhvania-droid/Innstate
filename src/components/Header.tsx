@@ -91,7 +91,8 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="overflow-hidden border-t border-black/5 bg-white lg:hidden"
+            style={{ overflow: open ? "visible" : "hidden" }}
+            className="border-t border-black/5 bg-white lg:hidden"
           >
             <div className="flex flex-col gap-1 px-5 py-4">
               {navItems.map((item) => (
