@@ -30,11 +30,11 @@ export type Destination = {
 
 export const destinations: Destination[] = [
   { slug: "dubai", name: "Dubai", country: "United Arab Emirates", image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1200&auto=format&fit=crop", dealsCount: 24 },
-  { slug: "paris", name: "Paris", country: "France", image: "https://images.unsplash.com/photo-1502602898657-3e91131210e7?q=80&w=1200&auto=format&fit=crop", dealsCount: 31 },
+  { slug: "paris", name: "Paris", country: "France", image: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=1200&auto=format&fit=crop", dealsCount: 31 },
   { slug: "london", name: "London", country: "United Kingdom", image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=1200&auto=format&fit=crop", dealsCount: 19 },
   { slug: "istanbul", name: "Istanbul", country: "Turkey", image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=1200&auto=format&fit=crop", dealsCount: 27 },
   { slug: "rome", name: "Rome", country: "Italy", image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=1200&auto=format&fit=crop", dealsCount: 22 },
-  { slug: "bangkok", name: "Bangkok", country: "Thailand", image: "https://images.unsplash.com/photo-1508009603885-50cf7c079365?q=80&w=1200&auto=format&fit=crop", dealsCount: 18 },
+  { slug: "bangkok", name: "Bangkok", country: "Thailand", image: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?q=80&w=1200&auto=format&fit=crop", dealsCount: 18 },
   { slug: "maldives", name: "Maldives", country: "Maldives", image: "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?q=80&w=1200&auto=format&fit=crop", dealsCount: 15 },
 ];
 
