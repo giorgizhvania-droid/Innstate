@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "title": "Innstate — Hotel Deals Worldwide",
+    "description": "Discover hotel deals worldwide and submit inquiries instantly. Cheap hotel offers, travel deals, and global hotel discounts with Innstate."
+  },
+  "nav": {
+    "home": "Home",
+    "destinations": "Destinations",
+    "deals": "Deals",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "headline": "Find Better Hotel Deals Worldwide",
+    "subheadline": "Discover hotels across the world with exclusive offers and submit inquiries instantly.",
+    "explore": "Explore Deals",
+    "contact": "Contact Us"
+  },
+  "destinationsSection": {
+    "title": "Featured Destinations",
+    "subtitle": "Pick a destination and discover exclusive hotel offers waiting for you."
+  },
+  "dealsSection": {
+    "title": "Featured Hotel Deals",
+    "subtitle": "Hand-picked hotel offers from around the globe.",
+    "request": "Request Offer"
+  },
+  "why": {
+    "title": "Why Innstate",
+    "subtitle": "We make finding the right hotel deal simple, fast, and reliable.",
+    "items": [
+      { "title": "Global Hotel Coverage", "text": "Access hotel deals across hundreds of destinations worldwide." },
+      { "title": "Best Deal Access", "text": "Exclusive offers curated to give you the most value for your trip." },
+      { "title": "Fast Inquiry System", "text": "Submit your travel inquiry in seconds and hear back quickly." },
+      { "title": "Trusted Partners", "text": "We work with reliable hotel partners across the globe." }
+    ]
+  },
+  "how": {
+    "title": "How It Works",
+    "steps": [
+      { "title": "Browse hotel deals", "text": "Explore our curated selection of hotel offers worldwide." },
+      { "title": "Send inquiry", "text": "Fill out a short form with your travel details." },
+      { "title": "Receive confirmation", "text": "We'll reach out to confirm your inquiry via email." }
+    ]
+  },
+  "stats": {
+    "destinations": "Destinations",
+    "deals": "Hotel Deals",
+    "inquiries": "Inquiries Sent",
+    "countries": "Countries Covered"
+  },
+  "testimonials": {
+    "title": "What Travelers Say",
+    "subtitle": "Real feedback from travelers who found their perfect stay through Innstate.",
+    "items": [
+      { "name": "Anna K.", "text": "Innstate helped me find an amazing deal in Rome within minutes. The inquiry process was super simple!" },
+      { "name": "David M.", "text": "I loved how easy it was to browse destinations and get a quick response back about my travel dates." },
+      { "name": "Sophie L.", "text": "Great selection of hotels and a smooth, modern experience from start to finish." },
+      { "name": "Levan T.", "text": "Found a fantastic deal in Dubai. The team replied to my inquiry the same day." }
+    ]
+  },
+  "cta": {
+    "headline": "Start Your Travel Inquiry Today",
+    "button": "Contact Us"
+  },
+  "footer": {
+    "tagline": "Hotel deals worldwide, made simple.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "rights": "All rights reserved."
+  },
+  "destinationsPage": {
+    "title": "Explore Destinations",
+    "subtitle": "Search and filter destinations to find your next great hotel deal.",
+    "searchPlaceholder": "Search destinations...",
+    "all": "All",
+    "noResults": "No destinations match your search."
+  },
+  "dealsPage": {
+    "title": "Hotel Deals",
+    "subtitle": "Browse our latest hand-picked hotel offers from around the world.",
+    "noResults": "No deals match your search."
+  },
+  "about": {
+    "title": "About Innstate",
+    "intro": "Innstate is a travel deals platform connecting travelers with exclusive hotel offers worldwide.",
+    "p1Title": "What Innstate Is",
+    "p1": "Innstate is a discovery platform for hotel deals — a place where travelers can explore exclusive offers from hotels around the world and easily request more information.",
+    "p2Title": "What We Offer",
+    "p2": "We curate hotel deals across major destinations, making it simple to browse offers, compare options, and submit an inquiry — all without the complexity of a booking system.",
+    "p3Title": "Focus on Travel Deals",
+    "p3": "Our focus is simple: help you discover better hotel deals, faster. No clutter, no pressure — just great offers worth exploring.",
+    "p4Title": "Global Coverage",
+    "p4": "From Dubai to Paris, Bangkok to the Maldives, our growing list of destinations spans the globe so you can dream — and plan — without limits.",
+    "p5Title": "Customer-First Approach",
+    "p5": "Every inquiry matters. We aim to respond quickly and help you find a hotel deal that fits your trip."
+  },
+  "contactPage": {
+    "title": "Contact Us",
+    "subtitle": "Tell us about your trip and we'll get back to you with the best available offers.",
+    "form": {
+      "fullName": "Full Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "destination": "Destination / Hotel Name",
+      "dates": "Travel Dates",
+      "guests": "Number of Guests",
+      "message": "Message",
+      "submit": "Send Inquiry",
+      "sending": "Sending...",
+      "success": "Your inquiry has been received. We will contact you soon.",
+      "error": "Something went wrong. Please try again later."
+    },
+    "directTitle": "Reach us directly",
+    "directText": "Fill out the form and we typically respond within 24 hours."
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "loading": "Loading"
+  }
+}
