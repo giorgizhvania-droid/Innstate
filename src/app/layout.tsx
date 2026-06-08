@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins, Noto_Sans_Georgian } from "next/font/google";
 import "./globals.css";
+import { SITE_URL } from "@/lib/site";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -21,9 +22,14 @@ const notoGeorgian = Noto_Sans_Georgian({
 });
 
 export const metadata: Metadata = {
-  title: "Innstate — Hotel Deals Worldwide",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Innstate — Hotel Deals Worldwide",
+    template: "%s | Innstate",
+  },
   description:
-    "Discover hotel deals worldwide and submit inquiries instantly with Innstate.",
+    "Discover hotel deals worldwide and submit inquiries instantly with Innstate. Cheap hotel offers, travel deals, and global hotel discounts.",
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({

@@ -20,13 +20,38 @@ function findAnswer(input: string, questions: { q: string; a: string }[], fallba
 export default function AssistantWidget({ dict }: { dict: Dictionary }) {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
+  const [sending, setSending] = useState(false);
   const [messages, setMessages] = useState<Message[]>([{ role: "bot", text: dict.assistant.greeting }]);
 
-  function ask(text: string) {
-    if (!text.trim()) return;
-    const answer = findAnswer(text, dict.assistant.questions, dict.assistant.fallback);
-    setMessages((m) => [...m, { role: "user", text }, { role: "bot", text: answer }]);
+  async function ask(text: string) {
+    if (!text.trim() || sending) return;
+    const history = [...messages, { role: "user" as const, text }];
+    setMessages(history);
     setInput("");
+    setSending(true);
+
+    try {
+      const res = await fetch("/api/assistant", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          messages: history.map((m) => ({ role: m.role === "bot" ? "assistant" : "user", content: m.text })),
+        }),
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        setMessages((m) => [...m, { role: "bot", text: data.reply }]);
+      } else {
+        const answer = findAnswer(text, dict.assistant.questions, dict.assistant.fallback);
+        setMessages((m) => [...m, { role: "bot", text: answer }]);
+      }
+    } catch {
+      const answer = findAnswer(text, dict.assistant.questions, dict.assistant.fallback);
+      setMessages((m) => [...m, { role: "bot", text: answer }]);
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -66,6 +91,21 @@ export default function AssistantWidget({ dict }: { dict: Dictionary }) {
                 </div>
               ))}
 
+              {sending && (
+                <div className="flex justify-start">
+                  <p className="flex items-center gap-1 rounded-2xl bg-surface px-4 py-2.5">
+                    {[0, 1, 2].map((i) => (
+                      <motion.span
+                        key={i}
+                        animate={{ opacity: [0.3, 1, 0.3] }}
+                        transition={{ duration: 1, repeat: Infinity, delay: i * 0.15 }}
+                        className="h-1.5 w-1.5 rounded-full bg-foreground/40"
+                      />
+                    ))}
+                  </p>
+                </div>
+              )}
+
               {messages.length === 1 && (
                 <div className="flex flex-col gap-2 pt-1">
                   {dict.assistant.questions.map((item) => (
@@ -92,14 +132,16 @@ export default function AssistantWidget({ dict }: { dict: Dictionary }) {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder={dict.assistant.placeholder}
-                className="flex-1 rounded-full border border-black/10 bg-surface px-4 py-2.5 text-sm outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
+                disabled={sending}
+                className="flex-1 rounded-full border border-black/10 bg-surface px-4 py-2.5 text-sm outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20 disabled:opacity-60"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"
+                disabled={sending}
                 aria-label={dict.assistant.send}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-white transition-colors hover:bg-accent/90"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-white transition-colors hover:bg-accent/90 disabled:opacity-60"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="m22 2-7 20-4-9-9-4Z" />
